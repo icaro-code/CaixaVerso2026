@@ -1,0 +1,1 @@
+Lista de Exercicios desenvolvidos durante o projeto CaixaVerso Educação Continuada 2026 entre a Ada.tech e a Caixa Econômica.
