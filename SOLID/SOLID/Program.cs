@@ -10,8 +10,9 @@ namespace SOLID
             carrinho.AdicionarProduto("Notebook", 3500m, 1);
             carrinho.AdicionarProduto("Mouse", 150m, 2);
 
-            var pagamento = new Pagamento();
-            pagamento.Processar(TipoPagamento.Credito, carrinho.ValorTotal);
+            // Escolha da forma de pagamento
+            IPagamento pagamento = new PagamentoCredito();
+            pagamento.Pagar(carrinho.ValorTotal);
 
             var comprovante = new Comprovante();
             comprovante.Imprimir(carrinho.ValorTotal);
