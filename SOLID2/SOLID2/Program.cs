@@ -21,9 +21,16 @@
             // 1 produto inválido
             service.CadastrarProduto(new Produto { Id = Guid.NewGuid(), Descricao = "", ValorUnitario = 100m });
 
-            // 2 notas fiscais
-            service.CadastrarNotaFiscal(new NotaFiscal { Numero = 1, Cliente = "Cliente A", ValorTotal = 319.70m });
-            service.CadastrarNotaFiscal(new NotaFiscal { Numero = 2, Cliente = "Cliente B", ValorTotal = 500m });
+            // Perguntar nomes dos clientes
+            Console.Write("Informe o nome do cliente da Nota Fiscal 1: ");
+            string cliente1 = Console.ReadLine();
+
+            Console.Write("Informe o nome do cliente da Nota Fiscal 2: ");
+            string cliente2 = Console.ReadLine();
+
+            // 2 notas fiscais com nomes informados pelo usuário
+            service.CadastrarNotaFiscal(new NotaFiscal { Numero = 1, Cliente = cliente1, ValorTotal = 319.70m });
+            service.CadastrarNotaFiscal(new NotaFiscal { Numero = 2, Cliente = cliente2, ValorTotal = 500m });
 
             // Listar
             Console.WriteLine("\n--- Produtos ---");
@@ -33,5 +40,4 @@
             service.ListarNotas();
         }
     }
-
 }
