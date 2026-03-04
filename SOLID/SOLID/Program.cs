@@ -7,11 +7,14 @@ namespace SOLID
         static void Main()
         {
             var carrinho = new CarrinhoDeCompras();
-            carrinho.AdicionarProduto("Notebook", 3500m, 1);
-            carrinho.AdicionarProduto("Mouse", 150m, 2);
+            carrinho.AdicionarProduto("Mouse", 79.90m, 2);
+            carrinho.AdicionarProduto("Teclado", 159.90m, 1);
 
-            // Escolha da forma de pagamento
-            IPagamento pagamento = new PagamentoCredito();
+            // Total esperado: 319,70
+            Console.WriteLine($"Total do carrinho: R$ {carrinho.ValorTotal:0.00}");
+
+            // Executar com Pix
+            IPagamento pagamento = new PagamentoPix(); // injeção manual
             pagamento.Pagar(carrinho.ValorTotal);
 
             var comprovante = new Comprovante();
