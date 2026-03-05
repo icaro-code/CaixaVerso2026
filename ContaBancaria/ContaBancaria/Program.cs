@@ -6,23 +6,30 @@ class Program
 {
     static void Main()
     {
-        var banco = new BancoService();
+        // Criando as contas
+        var contaCorrente = new ContaCorrente(1001, "Alice", 500);
+        var contaPoupanca = new ContaPoupanca(2001, "Bruno", 1000);
+        var contaJuridica = new ContaJuridica(3001, "Empresa XPTO", 5000, "12.345.678/0001-99");
 
-        var conta1 = new ContaCorrente(1001, "Alice", 500);
-        var conta2 = new ContaPoupanca(2001, "Bruno", 1000);
+        // Operações na Conta Corrente
+        contaCorrente.Depositar(200);
+        contaCorrente.Sacar(100);
 
-        banco.AdicionarConta(conta1);
-        banco.AdicionarConta(conta2);
+        // Operações na Conta Poupança
+        contaPoupanca.Depositar(300);
+        contaPoupanca.RenderJuros(0.05m);
 
-        conta1.Depositar(200);
-        conta1.Sacar(100);
+        // Operações na Conta Jurídica
+        contaJuridica.Depositar(2000);
+        contaJuridica.Sacar(1000);
+        contaJuridica.SolicitarEmprestimo(10000);
 
-        conta2.Depositar(300);
-        conta2.RenderJuros(0.05m);
-
-        conta1.ExibirExtrato();
+        // Exibir extratos
+        Console.WriteLine("=== Extratos ===\n");
+        contaCorrente.ExibirExtrato();
         Console.WriteLine();
-        conta2.ExibirExtrato();
+        contaPoupanca.ExibirExtrato();
+        Console.WriteLine();
+        contaJuridica.ExibirExtrato();
     }
 }
-
