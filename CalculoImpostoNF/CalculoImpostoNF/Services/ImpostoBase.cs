@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculoImpostoNF
+namespace CalculoImpostoNF.Services
 {
     public abstract class ImpostoBase
     {

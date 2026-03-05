@@ -1,6 +1,8 @@
 ﻿
 
 using CalculoImpostoNF;
+using CalculoImpostoNF.Domain;
+using CalculoImpostoNF.Services;
 
 public class Program
 {
