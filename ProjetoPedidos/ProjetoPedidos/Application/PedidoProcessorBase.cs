@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Classe abstrata com Template Method: define fluxo padrão de processamento
+
 namespace ProjetoPedidos.Application
 {
     public abstract class PedidoProcessorBase

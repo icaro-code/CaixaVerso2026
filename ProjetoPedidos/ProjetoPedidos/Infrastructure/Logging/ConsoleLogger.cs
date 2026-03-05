@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Implementação simples de logger: escreve mensagens no console
+
 namespace ProjetoPedidos.Infrastructure.Logging
 {
     public class ConsoleLogger : ILogger

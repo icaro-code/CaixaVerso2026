@@ -1,3 +1,53 @@
++---------------------------------------------------+
+|                   Program.cs                      |
+|  Composition Root: configura DI, cria cenário     |
+|  - Reflection (auto-registro de descontos)        |
+|  - Injeção de Dependência (ServiceCollection)     |
++---------------------------------------------------+
+                        |
+                        v
++---------------------------------------------------+
+|                  Application Layer                |
+|                                                   |
+| PedidoProcessorBase (Template Method)             |
+|  - Herança + Polimorfismo (métodos virtuais)      |
+| PedidoProcessor                                   |
+|  - Polimorfismo (IDesconto, IPagamento, ILogger)  |
+|  - DIP (depende de abstrações, não concretos)     |
++---------------------------------------------------+
+                        |
+                        v
++---------------------------------------------------+
+|                    Domain Layer                   |
+|                                                   |
+| Entidades: Produto, ItemPedido, Pedido            |
+|  - Encapsulamento (lista interna protegida)       |
+|  - SRP (responsabilidade única)                   |
+|                                                   |
+| Interfaces: IDesconto, IPagamento, IEntity        |
+|  - Abstração (contratos de negócio)               |
+| Implementações:                                   |
+|  - DescontoPercentual, DescontoPorQuantidade      |
+|     -> Polimorfismo (cada um calcula diferente)   |
+|  - PagamentoPix, PagamentoCartao                  |
+|     -> Polimorfismo (formas distintas de pagar)   |
++---------------------------------------------------+
+                        |
+                        v
++---------------------------------------------------+
+|                 Infrastructure Layer              |
+|                                                   |
+| ILogger -> ConsoleLogger                          |
+|  - Abstração + Implementação concreta             |
+| IRepository<T> -> InMemoryRepository<T>           |
+|  - Generics + Constraints (where T : IEntity)     |
+|                                                   |
+| Reflection (descobrir implementações dinamicamente)|
++---------------------------------------------------+
+
+
+
+
 PROJETO FINAL — POO II - Sistema de Pedidos e Pagamentos Extensível
 
 Objetivo do projeto

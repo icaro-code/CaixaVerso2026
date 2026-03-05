@@ -7,7 +7,12 @@ using ProjetoPedidos.Domain.Pagamentos;
 using ProjetoPedidos.Infrastructure.Logging;
 
 
-var services = new ServiceCollection();
+// Composition Root: configura DI, cria cenário e executa fluxo
+
+
+
+var services = new ServiceCollection(); // Cria uma nova coleção para registrar serviços e dependências
+
 
 // Logger
 services.AddSingleton<ILogger, ConsoleLogger>();
@@ -35,4 +40,5 @@ pedido.AdicionarItem(mouse, 2);
 pedido.AdicionarItem(teclado, 1);
 pedido.AdicionarItem(headset, 2);
 
-processor.Processar(pedido);
+processor.Processar(pedido);    // Chama o método Processar para executar a lógica sobre o objeto pedido
+

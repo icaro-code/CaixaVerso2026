@@ -6,8 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ProjetoPedidos.Domain.Discounts
 {
+    // Desconto percentual: aplica % sobre o total bruto
     public class DescontoPercentual : IDesconto
     {
         public string Nome => $"DescontoPercentual ({_percentual}%)";

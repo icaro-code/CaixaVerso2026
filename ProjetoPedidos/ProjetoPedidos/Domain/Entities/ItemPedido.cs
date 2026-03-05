@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Entidade ItemPedido: associa um produto a uma quantidade e calcula subtotal
+
 namespace ProjetoPedidos.Domain.Entities
 {
     public class ItemPedido

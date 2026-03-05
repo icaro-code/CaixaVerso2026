@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Interface de pagamento: abstrai forma de pagamento
+
 namespace ProjetoPedidos.Domain.Interfaces
 {
     public interface IPagamento

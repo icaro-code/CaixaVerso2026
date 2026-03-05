@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Interface de desconto: abstrai cálculo de desconto sobre um pedido
+
 namespace ProjetoPedidos.Domain.Interfaces
 {
     public interface IDesconto
